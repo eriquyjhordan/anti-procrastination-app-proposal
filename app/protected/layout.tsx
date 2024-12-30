@@ -2,6 +2,7 @@ import { AppSidebar } from '@/components/app-sidebar'
 import CommandSearch from '@/components/command-search'
 import { EnvVarWarning } from '@/components/env-var-warning'
 import HeaderAuth from '@/components/header-auth'
+import NewProjectButton from '@/components/new-project-button'
 import { ThemeSwitcher } from '@/components/theme-switcher'
 import { hasEnvVars } from '@/utils/supabase/check-env-vars'
 
@@ -20,6 +21,9 @@ export default function Layout({
               <CommandSearch />
             </div>
             <div className="flex gap-2">
+              <div className="mr-6">
+                <NewProjectButton />
+              </div>
               {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
               <ThemeSwitcher />
             </div>
