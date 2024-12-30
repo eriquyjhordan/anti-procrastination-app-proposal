@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation'
 
 import NotesSection from '@/components/notes-section'
+import Schedule from '@/components/schedule'
 import TaskTable from '@/components/task-table'
 import { createClient } from '@/utils/supabase/server'
 
@@ -16,10 +17,22 @@ export default async function ProtectedPage() {
   }
 
   return (
-    <div className="flex w-full flex-1 flex-col">
-      <TaskTable />
-      <div className="w-1/2 rounded-lg border border-foreground/10">
-        <NotesSection />
+    <div className="flex w-full flex-1 flex-col p-4">
+      <div
+        className="overflow-y-auto"
+        style={{ maxHeight: '85vh', scrollbarWidth: 'none' }}
+      >
+        <div className=" rounded-lg border border-foreground/10">
+          <TaskTable />
+        </div>
+        <div className="mt-4 flex gap-4">
+          <div className="w-1/2 rounded-lg border border-foreground/10">
+            <Schedule />
+          </div>
+          <div className="w-1/2 rounded-lg border border-foreground/10">
+            <NotesSection />
+          </div>
+        </div>
       </div>
     </div>
   )

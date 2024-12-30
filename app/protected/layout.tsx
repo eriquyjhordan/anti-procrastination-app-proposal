@@ -10,7 +10,7 @@ export default function Layout({
   children: React.ReactNode
 }>) {
   return (
-    <div className="flex min-h-screen w-full">
+    <div className="flex min-h-screen w-full overflow-y-hidden">
       <AppSidebar />
       <div className="flex w-full flex-1 flex-col">
         <nav className="flex h-16 w-full justify-center border-b border-b-foreground/10">
