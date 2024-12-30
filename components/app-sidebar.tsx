@@ -85,15 +85,15 @@ export function AppSidebar() {
   return (
     <div
       className={cn(
-        'flex flex-col h-screen border-r bg-white transition-all duration-300',
+        'flex flex-col h-screen border-r bg-background transition-all duration-300',
         isCollapsed ? 'w-[60px]' : 'w-[240px]',
       )}
     >
-      <div className="flex h-16 items-center border-b p-4">
+      <div className="flex h-16 items-center border-b bg-card p-4">
         <Button
           variant="ghost"
           className={cn(
-            'flex w-full px-2 justify-start',
+            'flex w-full px-2 justify-start text-foreground',
             isCollapsed && 'justify-center',
           )}
           onClick={() => setIsCollapsed(!isCollapsed)}
@@ -113,13 +113,22 @@ export function AppSidebar() {
               key={item.title}
               variant={item.variant === 'primary' ? 'default' : 'ghost'}
               className={cn(
-                'w-full justify-start gap-2',
+                'w-full justify-start gap-2 text-foreground',
                 isCollapsed && 'justify-center px-2',
-                item.variant === 'primary' && 'bg-blue-600 hover:bg-blue-700',
+                item.variant === 'primary' &&
+                  'bg-primary text-primary-foreground hover:bg-primary-hover hover:text-primary-hover-foreground',
               )}
             >
               <item.icon className={cn('h-4 w-4', isCollapsed && 'h-5 w-5')} />
-              <span className={cn(isCollapsed && 'hidden')}>{item.title}</span>
+              <span
+                className={cn(
+                  isCollapsed && 'hidden',
+                  item.variant === 'primary' &&
+                    'text-primary-foreground hover:text-primary-hover-foreground',
+                )}
+              >
+                {item.title}
+              </span>
             </Button>
           ))}
 
@@ -130,7 +139,7 @@ export function AppSidebar() {
             <div className="flex items-center justify-between px-2 py-1">
               <span
                 className={cn(
-                  'text-sm font-medium text-gray-500',
+                  'text-sm font-medium text-muted-foreground',
                   isCollapsed && 'hidden',
                 )}
               >
@@ -155,20 +164,22 @@ export function AppSidebar() {
                   className="h-8 w-full justify-start gap-2"
                 >
                   <div className={cn('h-2 w-2 rounded', project.color)} />
-                  <span className="text-sm">{project.title}</span>
+                  <span className="text-sm text-foreground">
+                    {project.title}
+                  </span>
                 </Button>
               ))}
             </CollapsibleContent>
           </Collapsible>
         </div>
       </ScrollArea>
-      <div className="space-y-2 border-t p-2">
+      <div className="space-y-2 border-t bg-card p-2">
         {footerNavItems.map((item) => (
           <Button
             key={item.title}
             variant="ghost"
             className={cn(
-              'w-full justify-start gap-2',
+              'w-full justify-start gap-2 text-foreground',
               isCollapsed && 'justify-center px-2',
             )}
           >
@@ -177,7 +188,7 @@ export function AppSidebar() {
             {item.badge && (
               <span
                 className={cn(
-                  'ml-auto bg-green-500 text-white text-xs px-2 py-0.5 rounded-full',
+                  'ml-auto bg-accent text-accent-foreground text-xs px-2 py-0.5 rounded-full',
                   isCollapsed && 'hidden',
                 )}
               >
