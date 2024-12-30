@@ -23,7 +23,19 @@ export default function Layout({
           </div>
         </nav>
         <main className="mx-auto max-w-5xl flex-1 p-5">{children}</main>
-        <footer className="mx-auto flex w-full items-center justify-center gap-8 border-t py-4 text-center text-xs"></footer>
+        <footer className="mx-auto flex w-full items-center justify-center gap-8 border-t py-4 text-center text-xs">
+          <p>
+            Powered by{' '}
+            <a
+              href="https://www.linkedin.com/in/eriquyjhordan/?editlocale=en_us"
+              target="_blank"
+              className="font-bold hover:underline"
+              rel="noreferrer"
+            >
+              Eriquy Jhordan
+            </a>
+          </p>
+        </footer>
       </div>
     </div>
   )
