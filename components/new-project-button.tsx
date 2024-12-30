@@ -13,7 +13,7 @@ import {
 export default function NewProjectButton() {
   return (
     <div className="flex">
-      <Button className="rounded-r-none bg-blue-600 px-4 text-xs text-primary hover:bg-blue-700">
+      <Button className="rounded-r-none bg-blue-600 px-4 text-xs text-white hover:bg-blue-700">
         <Plus className="mr-2 h-2 w-2" />
         New Project
       </Button>
@@ -21,7 +21,7 @@ export default function NewProjectButton() {
         <DropdownMenuTrigger asChild>
           <Button
             variant="default"
-            className="rounded-l-none border-l border-blue-500 bg-blue-600 px-2 text-primary hover:bg-blue-700"
+            className="rounded-l-none border-l border-blue-500 bg-blue-600 px-2 text-white hover:bg-blue-700"
           >
             <ChevronDown className="h-2 w-2" />
           </Button>

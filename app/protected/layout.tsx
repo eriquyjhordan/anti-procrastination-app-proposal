@@ -12,9 +12,9 @@ export default function Layout({
   children: React.ReactNode
 }>) {
   return (
-    <div className="flex min-h-screen w-full overflow-y-hidden">
+    <div className="flex min-h-screen w-full overflow-hidden">
       <AppSidebar />
-      <div className="flex w-full flex-1 flex-col">
+      <div className="flex w-full flex-1 flex-col overflow-y-auto">
         <nav className="flex h-16 w-full justify-center border-b border-b-foreground/10">
           <div className="flex w-full items-center justify-between p-3 px-5 text-sm">
             <div className="flex w-1/3 items-center gap-5 font-semibold">

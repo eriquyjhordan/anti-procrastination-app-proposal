@@ -78,15 +78,17 @@ export default function Schedule() {
   const [selectedDate, setSelectedDate] = useState(17)
 
   return (
-    <div className="mx-auto w-full max-w-3xl rounded-lg bg-white p-6">
+    <div className="mx-auto w-full max-w-3xl rounded-lg bg-white p-6 dark:bg-gray-800">
       <div className="mb-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Calendar className="h-5 w-5 text-gray-500" />
-          <h2 className="text-xl font-semibold">Schedule</h2>
+          <Calendar className="h-5 w-5 text-gray-500 dark:text-gray-300" />
+          <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+            Schedule
+          </h2>
         </div>
         <Button variant="ghost" size="icon">
           <svg
-            className="h-4 w-4"
+            className="h-4 w-4 text-gray-500 dark:text-gray-300"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
@@ -107,12 +109,16 @@ export default function Schedule() {
             className={`flex flex-col items-center rounded-lg p-2 transition-colors
               ${
                 selectedDate === date
-                  ? 'bg-purple-100 text-purple-700'
-                  : 'hover:bg-gray-100'
+                  ? 'bg-purple-100 text-purple-700 dark:bg-purple-800 dark:text-purple-200'
+                  : 'hover:bg-gray-100 dark:hover:bg-gray-700'
               }`}
           >
-            <span className="text-sm font-medium">{day}</span>
-            <span className="text-lg">{date}</span>
+            <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
+              {day}
+            </span>
+            <span className="text-lg text-gray-900 dark:text-gray-100">
+              {date}
+            </span>
           </button>
         ))}
       </div>
@@ -128,16 +134,21 @@ export default function Schedule() {
                 <div>
                   <div className="flex items-center gap-2">
                     {task.icon}
-                    <h3 className="font-medium">{task.title}</h3>
+                    <h3 className="font-medium text-gray-900 dark:text-gray-100">
+                      {task.title}
+                    </h3>
                   </div>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
                     {task.startTime} to {task.endTime}
                   </p>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-2">
                     {task.assignees.map((assignee, index) => (
-                      <Avatar key={index} className="border-2 border-white">
+                      <Avatar
+                        key={index}
+                        className="border-2 border-white dark:border-gray-800"
+                      >
                         <AvatarImage src={assignee.avatar} />
                         <AvatarFallback>{assignee.initials}</AvatarFallback>
                       </Avatar>
@@ -147,7 +158,7 @@ export default function Schedule() {
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" size="icon" className="h-8 w-8">
                         <svg
-                          className="h-4 w-4"
+                          className="h-4 w-4 text-gray-500 dark:text-gray-300"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"
@@ -159,9 +170,16 @@ export default function Schedule() {
                         </svg>
                       </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuItem>Edit</DropdownMenuItem>
-                      <DropdownMenuItem>Delete</DropdownMenuItem>
+                    <DropdownMenuContent
+                      align="end"
+                      className="bg-white dark:bg-gray-700"
+                    >
+                      <DropdownMenuItem className="text-gray-900 dark:text-gray-100">
+                        Edit
+                      </DropdownMenuItem>
+                      <DropdownMenuItem className="text-gray-900 dark:text-gray-100">
+                        Delete
+                      </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </div>
