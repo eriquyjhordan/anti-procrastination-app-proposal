@@ -1,4 +1,5 @@
 import { AppSidebar } from '@/components/app-sidebar'
+import CommandSearch from '@/components/command-search'
 import { EnvVarWarning } from '@/components/env-var-warning'
 import HeaderAuth from '@/components/header-auth'
 import { ThemeSwitcher } from '@/components/theme-switcher'
@@ -15,7 +16,9 @@ export default function Layout({
       <div className="flex w-full flex-1 flex-col">
         <nav className="flex h-16 w-full justify-center border-b border-b-foreground/10">
           <div className="flex w-full items-center justify-between p-3 px-5 text-sm">
-            <div className="flex items-center gap-5 font-semibold"></div>
+            <div className="flex w-1/3 items-center gap-5 font-semibold">
+              <CommandSearch />
+            </div>
             <div className="flex gap-2">
               {!hasEnvVars ? <EnvVarWarning /> : <HeaderAuth />}
               <ThemeSwitcher />

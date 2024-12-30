@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
 
+import DashboardHeader from '@/components/dashboard-header'
 import NotesSection from '@/components/notes-section'
 import Schedule from '@/components/schedule'
 import TaskTable from '@/components/task-table'
@@ -22,6 +23,7 @@ export default async function ProtectedPage() {
         className="overflow-y-auto"
         style={{ maxHeight: '85vh', scrollbarWidth: 'none' }}
       >
+        <DashboardHeader />
         <div className=" rounded-lg border border-foreground/10">
           <TaskTable />
         </div>
