@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={geistSans.className}>
-      <body className="bg-background text-foreground">
+      <body className="w-full bg-background text-foreground">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

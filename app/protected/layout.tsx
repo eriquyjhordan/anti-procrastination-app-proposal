@@ -10,9 +10,9 @@ export default function Layout({
   children: React.ReactNode
 }>) {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen w-full">
       <AppSidebar />
-      <div className="flex flex-1 flex-col">
+      <div className="flex w-full flex-1 flex-col">
         <nav className="flex h-16 w-full justify-center border-b border-b-foreground/10">
           <div className="flex w-full items-center justify-between p-3 px-5 text-sm">
             <div className="flex items-center gap-5 font-semibold"></div>
@@ -22,7 +22,7 @@ export default function Layout({
             </div>
           </div>
         </nav>
-        <main className="mx-auto max-w-5xl flex-1 p-5">{children}</main>
+        <main className="mx-auto w-full max-w-5xl flex-1">{children}</main>
         <footer className="mx-auto flex w-full items-center justify-center gap-8 border-t py-4 text-center text-xs">
           <p>
             Powered by{' '}
