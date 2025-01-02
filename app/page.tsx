@@ -35,7 +35,7 @@ export default async function Home() {
               my portfolio, I bring significant professional experience as a
               Full Stack Developer. My expertise includes working with
               technologies such as{' '}
-              <span className="font-medium text-gray-900">
+              <span className="font-medium text-gray-900 dark:text-slate-300">
                 Firebase, Next.js, TypeScript, and React
               </span>
               , alongside a strong foundation in UI/UX design.
@@ -56,10 +56,12 @@ export default async function Home() {
             </h2>
             <p className="mb-4 text-foreground/90">
               My education in Computer Engineering at{' '}
-              <span className="font-medium text-gray-900">UFES</span> and
-              consistent hands-on experience with my tech stack over the past
-              four years position me as a strong candidate to deliver robust,
-              lightweight applications tailored to user needs.
+              <span className="font-medium text-gray-900 dark:text-slate-300">
+                UFES
+              </span>{' '}
+              and consistent hands-on experience with my tech stack over the
+              past four years position me as a strong candidate to deliver
+              robust, lightweight applications tailored to user needs.
             </p>
           </div>
         </div>
