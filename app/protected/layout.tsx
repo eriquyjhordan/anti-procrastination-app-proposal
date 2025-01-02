@@ -34,7 +34,7 @@ export default function Layout({
           <p>
             Powered by{' '}
             <a
-              href="https://www.linkedin.com/in/eriquyjhordan/?editlocale=en_us"
+              href="https://www.upwork.com/freelancers/~0115e156929a7b471a?mp_source=share"
               target="_blank"
               className="font-bold hover:underline"
               rel="noreferrer"
